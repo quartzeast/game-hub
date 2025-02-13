@@ -1,10 +1,12 @@
-import apiClient from '@/services/api-client';
 import { CanceledError } from 'axios';
 import { useEffect, useState } from 'react';
 
-interface Game {
+import apiClient from '@/services/api-client';
+
+export interface Game {
   id: number;
   name: string;
+  background_image: string;
 }
 
 interface FetchGamesResponse {
@@ -32,7 +34,7 @@ const useGames = () => {
       });
 
     return () => controller.abort();
-  });
+  }, []);
 
   return { games, error };
 };
