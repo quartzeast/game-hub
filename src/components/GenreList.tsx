@@ -1,5 +1,5 @@
 import getCroppedImageUrl from '@/services/image-url';
-import { Button, HStack, Image, List, Spinner } from '@chakra-ui/react';
+import { Button, HStack, Image, List, Spinner, Text } from '@chakra-ui/react';
 import useGenres, { Genre } from '../hooks/useGenres';
 
 interface GenreListProp {
@@ -30,7 +30,7 @@ const GenreList = ({ selectedGenre, onSelectGenre }: GenreListProp) => {
               fontWeight={genre.id === selectedGenre?.id ? 'bold' : 'normal'}
               variant='ghost'
             >
-              {genre.name}
+              <Text>{genre.name}</Text>
             </Button>
           </HStack>
         </List.Item>
